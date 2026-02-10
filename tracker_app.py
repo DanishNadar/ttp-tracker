@@ -77,5 +77,5 @@ def health():
     return {"ok": True}
 
 if __name__ == "__main__":
-    port = int(os.getenv("TRACKER_PORT", "8080"))
+    port = int(os.getenv("PORT", os.getenv("TRACKER_PORT", "8080")))
     app.run(host="0.0.0.0", port=port)
